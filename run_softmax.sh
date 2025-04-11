@@ -9,7 +9,7 @@ export PATH=$PATH:$HOME/riscv-linux-install/bin
 export PATH=$PATH:$HOME/riscv-install/bin
 
 echo "=== Compiling softmax.c for RISC-V ==="
-riscv64-unknown-linux-gnu-gcc -march=rv64imafdv -mabi=lp64d -static -O2 -o softmax.elf softmax.c -lm
+riscv64-unknown-elf-gcc -march=rv64gcv_zicntr_zihpm -mabi=lp64d -static -O2 -o softmax.elf softmax.c -lm
 
 echo "=== Running on Spike RISC-V simulator ==="
 # Run with Spike simulator
